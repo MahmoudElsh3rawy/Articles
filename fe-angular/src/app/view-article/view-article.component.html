@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header">
+    <h2 class="articleTitle">{{ article["article_title"] }}</h2>
+    <button type="button" class="btn btn-primary" (click)="onClickEdit()">
+      Edit
+    </button>
+  </div>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <td class="label_column">Publisher Name</td>
+        <td>{{ article["publisher_name"] }}</td>
+      </tr>
+      <tr>
+        <td class="label_column">Last date modified</td>
+        <td>{{ article["updated_at"] }}</td>
+      </tr>
+      <tr>
+        <td class="label_column">Article Status</td>
+        <td>{{ article["article_status"] }}</td>
+      </tr>
+
+      <tr>
+        <td class="label_column">Article Content</td>
+        <td>{{ article["article_content"] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

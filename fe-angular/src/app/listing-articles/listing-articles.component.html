@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header">
+    <button
+      type="button"
+      id="createButton"
+      class="btn btn-primary"
+      (click)="onCreateArticle()"
+    >
+      Create Article
+    </button>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="styleTitle">Title</th>
+        <th class="stylePublisher">Publisher Name</th>
+        <th class="styleActions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of allArticles; let i = index">
+        <td class="articleTitle">{{ article.article_title }}</td>
+        <td>{{ article.publisher_name }}</td>
+        <td class="articleActions">
+          <button
+            type="button"
+            id="actionsButton"
+            class="btn btn-primary"
+            (click)="onClickView(article.article_id)"
+          >
+            View
+          </button>
+          <button
+            type="button"
+            id="actionsButton"
+            class="btn btn-danger"
+            (click)="onClickDelete(article.article_id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

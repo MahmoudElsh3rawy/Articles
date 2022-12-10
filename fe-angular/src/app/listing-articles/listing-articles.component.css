@@ -1,0 +1,31 @@
+.styleActions {
+  width: 15%;
+  text-align: center;
+}
+
+.styleTitle {
+  width: 65%;
+}
+
+.stylePublisher {
+  width: 20%;
+}
+
+#actionsButton {
+  margin: 2px;
+  width: 45%;
+}
+
+.articleTitle {
+  font-style: oblique;
+}
+
+#createButton {
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.articleActions {
+  text-align: center;
+}
