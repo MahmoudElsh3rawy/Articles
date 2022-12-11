@@ -3,13 +3,15 @@ const app = express(),
   bodyParser = require("body-parser");
 port = 3080;
 const mysql = require("mysql");
+const moment = require("moment");
 
 const con = mysql.createConnection({
-  host: "localhost",
+  host: "192.168.1.8",
   port: 3306,
   database: "article-schema",
   user: "root",
   password: "P@ssw0rd",
+  timezone: "uts",
 });
 
 con.connect(function (err) {
@@ -55,20 +57,8 @@ app.post("/api/deletearticle", (req, res) => {
 
 app.post("/api/article", (req, res) => {
   const article = req.body.article;
+  const updatedAt = moment().format("YYYY-MM-DD h:mm:ss");
 
-  const currentTime = new Date(Date.now());
-  const updatedAt =
-    currentTime.getFullYear() +
-    "-" +
-    currentTime.getMonth() +
-    "-" +
-    currentTime.getDay() +
-    " " +
-    currentTime.getHours() +
-    ":" +
-    currentTime.getMinutes() +
-    ":" +
-    currentTime.getSeconds();
   let sql = "";
   if ("articleId" in article) {
     sql =
