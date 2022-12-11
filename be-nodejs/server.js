@@ -6,7 +6,7 @@ const mysql = require("mysql");
 const moment = require("moment");
 
 const con = mysql.createConnection({
-  host: "192.168.1.8",
+  host: "localhost",
   port: 3306,
   database: "article-schema",
   user: "root",
